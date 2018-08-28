@@ -67,6 +67,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: .2s;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
 }
 .shader-list .shader:hover {
     background-color: rgba(60, 60, 60, 0.75);

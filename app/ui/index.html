@@ -3,6 +3,7 @@
 <head>
     <title>Shadertoy</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/list.js"></script>
 </head>
 <body>
     <div class="header">
@@ -18,11 +19,14 @@
             <option>Popular</option>
         </select>
         <div class="shader-list">
-            <div class="shader">
-                <img class="thumb" src="https://shadertoy.com/media/shaders/MlyyzW.jpg" />
-                <span class="name">Test Shader</span><br>
-                <span>by <span class="author">author</span></span>
-            </div>
+            <script>
+                var list = document.querySelector(".shader-list");
+                for(var i = 0; i < 50; i++) {
+                    var id    = Math.floor(Math.random() * 1000);
+                    var clone = createShaderNode(id, "Shader #" + i, Math.floor(Math.random() * 100));
+                    list.appendChild(clone);
+                }
+            </script>
         </div>
     </div>
 </body>
