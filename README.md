@@ -4,7 +4,7 @@ A desktop viewer and renderer for Shadertoy.
 # Setting up
 Step 1: Clone the repo and install the dependancies.
 ```shell
-$ git clone <repo url>
+$ git clone https://github.com/Romejanic/Shadertoy-Desktop
 $ npm install
 ```
 
