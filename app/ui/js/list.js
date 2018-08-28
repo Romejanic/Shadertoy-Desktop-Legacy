@@ -43,10 +43,12 @@ function loadShaderMetadata(list) {
             loadShaderMetadata(list);
             return;
         }
-        var data  = resp.Shader.info;
-        var div   = createShaderNode(shaderId, data.name, data.username);
+        var data  = resp.Shader;
+        var div   = createShaderNode(shaderId, data.info.name, data.info.username);
         loading.innerHTML = div.innerHTML;
-        loading.onclick   = div.onclick;
+        loading.onclick   = function() {
+            ipcRenderer.send("open-shader", data);
+        };
         loading.classList.remove("loading");
         loadShaderMetadata(list);
     });
@@ -76,11 +78,6 @@ function createShaderNode(shaderId, shaderName, authorName) {
     author.innerText = authorName;
     by.appendChild(author);
     div.appendChild(by);
-
-    div.onclick = function() {
-        console.log("clicked on " + shaderId);
-        ipcRenderer.send("open-shader", shaderId);
-    };
 
     return div;
 }

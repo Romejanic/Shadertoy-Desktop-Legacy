@@ -29,7 +29,7 @@ const windows = {
         windows.mainWindow = win;
     },
 
-    openShaderWindow: function(shaderId) {
+    openShaderWindow: function(shader) {
         var win = new BrowserWindow({
             title: "Shader",
             minWidth: 200,
@@ -39,11 +39,14 @@ const windows = {
             resizable: true,
             webPreferences: {
                 experimentalFeatures: true,
-                additionArguments: [ "shaderId=" + shaderId, "apiKey=" + api.apiKey ]
+                additionArguments: [ "apiKey=" + api.apiKey ]
             }
         });
         win.on("closed", () => {
             windows.shaderWindows.splice(windows.shaderWindows.indexOf(win), 1);
+        });
+        win.webContents.once("did-finish-load", () => {
+            win.webContents.send("shader-data", shader);
         });
         win.loadURL("file://" + path.join(__dirname, "ui", "shader.html"));
         windows.shaderWindows.push(win);
@@ -67,6 +70,6 @@ app.on("window-all-closed", () => {
     }
 });
 
-ipcMain.on("open-shader", (event, shaderId) => {
-    windows.openShaderWindow(shaderId);
+ipcMain.on("open-shader", (event, shader) => {
+    windows.openShaderWindow(shader);
 });
