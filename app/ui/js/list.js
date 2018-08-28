@@ -35,15 +35,16 @@ function loadShaderMetadata(list) {
     }
     var shaderId = loading.getAttribute("data-shader-id");
     makeApiRequest(QUERIES.shaderData(shaderId), (err, resp) => {
-        list.removeChild(loading);
         if(err || typeof resp !== "object") {
             console.error("Error loading shader data:", err);
+            list.removeChild(loading);
             loadShaderMetadata(list);
             return;
         }
         var data  = resp.Shader.info;
         var div   = createShaderNode(shaderId, data.name, data.username);
-        list.appendChild(div);
+        loading.innerHTML = div.innerHTML;
+        loading.classList.remove("loading");
         loadShaderMetadata(list);
     });
 }
