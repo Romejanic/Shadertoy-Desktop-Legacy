@@ -13,6 +13,8 @@ const windows = {
             title: "Shadertoy",
             minWidth: 200,
             minHeight: 200,
+            width: 1024,
+            height: 640,
             resizable: true
         });
         win.on("closed", () => {
@@ -32,5 +34,3 @@ app.on("window-all-closed", () => {
         app.quit();
     }
 });
-
-console.log(api.apiKey);
