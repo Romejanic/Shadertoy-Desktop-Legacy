@@ -17,8 +17,6 @@ var shaderManager = {
             return;
         }
 
-        console.log(this.canvas, this.glContext);
-
         this.glContext.clearColor(0.4, 0.6, 0.9, 1);
         this.glContext.clear(this.glContext.COLOR_BUFFER_BIT);
     }
@@ -30,5 +28,10 @@ window.addEventListener("load", () => {
 
 ipcRenderer.once("shader-data", (event, shader) => {
     shaderManager.shaderData = shader;
+
     document.title = shader.info.name + " by " + shader.info.username;
+    document.querySelector(".shader-name").innerText = shader.info.name;
+    document.querySelector(".author").innerText      = shader.info.username;
+    document.getElementById("views").innerText       = String(shader.info.viewed);
+    document.getElementById("likes").innerText       = String(shader.info.likes);
 });

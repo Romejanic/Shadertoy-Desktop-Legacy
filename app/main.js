@@ -37,6 +37,7 @@ const windows = {
             width: 500,
             height: 350,
             resizable: true,
+            backgroundColor: "#000000",
             webPreferences: {
                 experimentalFeatures: true,
                 additionArguments: [ "apiKey=" + api.apiKey ]
