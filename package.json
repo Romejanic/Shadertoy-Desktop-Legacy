@@ -1,0 +1,16 @@
+{
+    "name": "shadertoy-desktop",
+    "version": "1.0.0",
+    "author": {
+        "name": "Jack Davenport",
+        "email": "jack.davenport5011@gmail.com",
+        "url": "http://github.com/Romejanic/"
+    },
+    "main": "/app/main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        
+    }
+}
