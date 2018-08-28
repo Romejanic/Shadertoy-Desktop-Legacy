@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
+const api  = require("../api-key.json");
 
 const windows = {
     mainWindow: undefined,
@@ -31,3 +32,5 @@ app.on("window-all-closed", () => {
         app.quit();
     }
 });
+
+console.log(api.apiKey);
