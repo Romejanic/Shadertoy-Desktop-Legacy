@@ -11,6 +11,11 @@
         "start": "electron ."
     },
     "dependencies": {
-        
+        "electron": "^2.0.8"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": ""
     }
 }
