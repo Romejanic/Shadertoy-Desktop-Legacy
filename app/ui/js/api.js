@@ -20,7 +20,6 @@ function buildApiString(queryString, parameters) {
 }
 
 function makeApiRequest(url, callback) {
-    console.log("querying " + url);
     var http = new XMLHttpRequest();
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {

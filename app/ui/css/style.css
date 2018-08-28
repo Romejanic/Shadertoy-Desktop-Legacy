@@ -79,6 +79,7 @@ body {
 }
 .shader span.name {
     font-size: 1.5em;
+    text-overflow: clip;
 }
 .shader span.author {
     color: rgb(200, 200, 200);

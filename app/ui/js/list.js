@@ -1,3 +1,5 @@
+const { ipcRenderer } = require("electron");
+
 function loadAllShaders() {
     var sort = document.getElementById("sort").value;
     var page = 0;
@@ -44,6 +46,7 @@ function loadShaderMetadata(list) {
         var data  = resp.Shader.info;
         var div   = createShaderNode(shaderId, data.name, data.username);
         loading.innerHTML = div.innerHTML;
+        loading.onclick   = div.onclick;
         loading.classList.remove("loading");
         loadShaderMetadata(list);
     });
@@ -75,7 +78,8 @@ function createShaderNode(shaderId, shaderName, authorName) {
     div.appendChild(by);
 
     div.onclick = function() {
-        // open in new window
+        console.log("clicked on " + shaderId);
+        ipcRenderer.send("open-shader", shaderId);
     };
 
     return div;
