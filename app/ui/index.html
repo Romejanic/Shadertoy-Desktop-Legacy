@@ -14,21 +14,12 @@
     <div class="content">
         <h1>Hot Shaders</h1>
         <span>Sort by: </span>
-        <select>
-            <option>Hot</option>
-            <option>New</option>
-            <option>Popular</option>
+        <select id="sort">
+            <option selected value="hot">Hot</option>
+            <option value="newest">New</option>
+            <option value="popular">Popular</option>
         </select>
-        <div class="shader-list">
-            <script>
-                var list = document.querySelector(".shader-list");
-                for(var i = 0; i < 50; i++) {
-                    var id    = Math.floor(Math.random() * 1000);
-                    var clone = createShaderNode(id, "Shader #" + i, Math.floor(Math.random() * 100));
-                    list.appendChild(clone);
-                }
-            </script>
-        </div>
+        <div class="shader-list"></div>
     </div>
 </body>
 </html>

@@ -4,12 +4,19 @@ const QUERIES = {
     shaderList: function(pageNo, sort) {
         var shadersPerPage = 18;
         var from           = pageNo * shadersPerPage;
-        return buildApiString("?from=" + from + "&num=" + shadersPerPage + "?sort=" + sort);
+        return buildApiString("", ["from=" + from, "num=" + shadersPerPage, "sort=" + sort]);
+    },
+    shaderData: function(shaderId) {
+        return buildApiString(shaderId);
     }
 };
 
-function buildApiString(parameters) {
-    return encodeURI(SHADERTOY_URL + parameters + (parameters.indexOf("?") > -1 ? "&" : "?") + "key=" + apiKey);
+function buildApiString(queryString, parameters) {
+    if(!parameters) {
+        parameters = [];
+    }
+    parameters.push("key=" + apiKey);
+    return encodeURI(SHADERTOY_URL + queryString + "?" + parameters.join("&"));
 }
 
 function makeApiRequest(url, callback) {
