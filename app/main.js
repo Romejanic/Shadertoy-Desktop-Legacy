@@ -17,7 +17,8 @@ const windows = {
             height: 640,
             resizable: true,
             webPreferences: {
-                experimentalFeatures: true
+                experimentalFeatures: true,
+                additionalArguments: [ "apiKey=" + api.apiKey ]
             }
         });
         win.on("closed", () => {

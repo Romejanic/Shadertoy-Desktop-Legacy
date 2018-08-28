@@ -23,5 +23,9 @@ function createShaderNode(shaderId, shaderName, authorName) {
     by.appendChild(author);
     div.appendChild(by);
 
+    div.onclick = function() {
+        // open in new window
+    };
+
     return div;
 }
