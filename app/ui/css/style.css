@@ -5,6 +5,7 @@
 
 body {
     background: url("../res/img/background.jpg") repeat fixed;
+    font-family: Helvetica, Arial, sans-serif;
     padding-top: 50px;
 }
 .header {
@@ -28,9 +29,54 @@ body {
     padding: 5px;
     overflow-y: scroll;
 }
+
 .logo {
+    display: inline;
     font-family: "Lobster", Tahoma, Arial;
     font-size: 2em;
     color: white;
     line-height: 50px;
+}
+.header .search {
+    display: inline-block;
+    width: 50%;
+    height: 25px;
+    margin-left: 20px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding-left: 2px;
+    font-size: 1em;
+}
+
+.shader-list {
+    background-color: rgba(75, 75, 75, 0.5);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: calc(100% - 120px);
+}
+.shader-list .shader {
+    display: inline-block;
+    width: 150px;
+    min-height: 150px;
+    color: white;
+    padding: 3px;
+    background-color: rgba(10, 10, 10, 0.75);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+.shader-list .shader:hover {
+    background-color: rgba(60, 60, 60, 0.75);
+}
+.shader img.thumb {
+    width: 100%;
+}
+.shader span.name {
+    font-size: 1.5em;
+}
+.shader span.author {
+    color: rgb(200, 200, 200);
 }

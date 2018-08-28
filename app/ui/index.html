@@ -7,13 +7,23 @@
 <body>
     <div class="header">
         <span class="logo">Shadertoy</span>
+        <input class="search" type="text" placeholder="Search..." />
     </div>
     <div class="content">
-        <script>
-            for(var i = 0; i < 100; i++) {
-                document.write("<p>" + i + "</p>");
-            }
-        </script>
+        <h1>Hot Shaders</h1>
+        <span>Sort by: </span>
+        <select>
+            <option>Hot</option>
+            <option>New</option>
+            <option>Popular</option>
+        </select>
+        <div class="shader-list">
+            <div class="shader">
+                <img class="thumb" src="https://shadertoy.com/media/shaders/MlyyzW.jpg" />
+                <span class="name">Test Shader</span><br>
+                <span>by <span class="author">author</span></span>
+            </div>
+        </div>
     </div>
 </body>
 </html>
