@@ -15,7 +15,10 @@ const windows = {
             minHeight: 200,
             width: 1024,
             height: 640,
-            resizable: true
+            resizable: true,
+            webPreferences: {
+                experimentalFeatures: true
+            }
         });
         win.on("closed", () => {
             delete windows.mainWindow;

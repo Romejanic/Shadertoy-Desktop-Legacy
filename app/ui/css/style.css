@@ -3,6 +3,10 @@
     src: url("../res/fonts/Lobster\ 1.4.otf") format("opentype");
 }
 
+body {
+    background: url("../res/img/background.jpg") repeat fixed;
+    padding-top: 50px;
+}
 .header {
     position: fixed;
     box-sizing: border-box;
@@ -13,6 +17,16 @@
     padding-left: 5px;
     background-color: rgba(10, 10, 10, 0.75);
     backdrop-filter: blur(10px) saturate(5%);
+}
+.content {
+    position: fixed;
+    box-sizing: border-box;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 50px);
+    padding: 5px;
+    overflow-y: scroll;
 }
 .logo {
     font-family: "Lobster", Tahoma, Arial;
