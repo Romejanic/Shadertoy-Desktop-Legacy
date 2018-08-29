@@ -18,7 +18,7 @@
 
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px) saturate(5%);
+    backdrop-filter: blur(10px) saturate(2);
 
     font-family: Helvetica, Arial, sans-serif;
 

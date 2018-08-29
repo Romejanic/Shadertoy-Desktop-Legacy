@@ -17,7 +17,7 @@ body {
     height: 50px;
     padding-left: 5px;
     background-color: rgba(10, 10, 10, 0.75);
-    backdrop-filter: blur(10px) saturate(5%);
+    backdrop-filter: blur(10px) saturate(2);
 }
 .content {
     position: fixed;
